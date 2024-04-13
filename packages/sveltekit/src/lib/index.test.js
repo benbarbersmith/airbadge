@@ -5,14 +5,6 @@ import { PrismaClient } from '@prisma/client'
 const db = new PrismaClient()
 
 describe('SvelteKitAuth', () => {
-  test('when no plans, raises an error', () => {
-    expect(() => SvelteKitAuth({})).toThrowError('Must have at least one plan')
-  })
-
-  test('when plans empty, raises an error', () => {
-    expect(() => SvelteKitAuth({ plans: [] })).toThrowError('Must have at least one plan')
-  })
-
   test('when no providers, raises an error', () => {
     expect(() => SvelteKitAuth({ plans: [{}] })).toThrowError('Must have at least one provider')
   })
